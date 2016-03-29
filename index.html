@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> -->
+    <title>mangohouse</title>
+    <meta name="author" content="mango" />
+    <meta name="description" content="mango's website" />
+    <meta name="keywords"  content="mango mangohouse" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/examples.css" />
+    <link type="text/css" rel="stylesheet" href="css/animate.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/animation.css" />
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="js/examples.js"></script>
+    <!-- <style>
+        #section1 img{
+            left: 130%;
+            position:relative;
+        }
+        #section1 p{
+            display:none;
+        }
+        #section2 .intro{
+            left: -130%;
+            position:relative;
+        }
+    </style> -->
+</head>
+<body>
+<ul id="menu">
+    <li data-menuanchor="firstPage"><a href="#firstPage">First slide</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a></li>
+    <li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
+    <li data-menuanchor="4thpage"><a href="#4thpage">fourth slide</a></li>
+</ul>
+<!-- <div id="animate" class="a-bouncein">弹入</div> --> 
+<div id="fullpage">
+    <div class="section " id="section0">
+        <h1>mangohouse</h1>
+        <p>welcome to mangohouse</p>
+    </div>
+    <div class="section" id="section1">
+        <div class="intro">
+            <h1>easeOutExpo</h1>
+            <p>This example is working with `easeOutExpo` effect instead of the default `easeOutExpo`</p>
+            <p>You can see more about them</p>
+        </div>
+    </div>
+    <div class="section" id="section2">
+        <div class="intro">
+            <h1>Cool uh?</h1>
+            <p>Choose the best easing effect for your site!</p>
+        </div>
+    </div>
+    <div class="section" id="section3">
+        <div class="intro">
+            <h1>do u like it</h1>
+            <p>if u like it,give me a kiss!</p>
+        </div>
+    </div>
+    <div class="section" id="section4">
+        <div class="intro">
+            <h1>6666666do u like it</h1>
+            <p>if u like it,give me a kiss!</p>
+        </div>
+    </div>
+</div>
+ <script type="text/javascript">
+        $(document).ready(function() {
+        $('#fullpage').fullpage({
+                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'tomato', '#ccddff'],
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+                menu: '#menu',
+                afterLoad: function(anchorLink, index) {
+                    if (index == 1) {
+                        //moving the image
+                        var player = document.getElementById('section0').animate([{
+                            transform: 'scale(1)',
+                            opacity: 1,
+                            offset: 0
+                        }, {
+                            transform: 'scale(.5)',
+                            opacity: .5,
+                            offset: .3
+                        }, {
+                            transform: 'scale(.667)',
+                            opacity: .667
+                        }, {
+                            transform: 'scale(1)',
+                            opacity: .6
+                        }], {
+                            duration: 700, //毫秒
+                            easing: 'ease-in-out', //值为'linear', 或贝塞尔曲线, 等等
+                            delay: 10, //毫秒
+                            iterations: 1, //或者为数字
+                            direction: 'alternate', //'normal', 'reverse', 等等。
+                            fill: 'forwards' //'backwards', 'both', 'none', 'auto'
+                        });
+
+                    }
+                    //section 2
+                    if(index == 2){
+                        //moving the image
+                       var myAnimation = document.getElementById('section1').animate([
+                          { transform:'rotate(120deg)', opacity: 1, offset: 0},
+                          { transform:'rotate(360deg)', opacity: .5, offset: 0.3},
+                          { transform:'rotate(760deg)', opacity: .6,},
+                          { transform:'rotate(1080deg)', opacity: .88,}
+                        ],{
+                          duration:1000,
+                          easing:'ease-in-out',
+                          delay:10,
+                          iterations:1,
+                          direction:'alternate',
+                          fill:'forwards'
+                        });
+                    }
+                    //section 3
+                    // if(anchorLink == '3rdPage')
+                    if(index == 3){
+                       var player = document.getElementById('section2').animate([
+                        { transform: 'scale(1)', opacity: 1, offset: 0 },
+                        { transform: 'scale(.5)', opacity: .5, offset: .3 },
+                        { transform: 'scale(.667)', opacity: .667 },
+                        { transform: 'scale(1)', opacity: .6 }
+                      ], {
+                        duration: 700, //毫秒
+                        easing: 'ease-in-out', //值为'linear', 或贝塞尔曲线, 等等
+                        delay: 10, //毫秒
+                        iterations: 1, //或者为数字
+                        direction: 'alternate', //'normal', 'reverse', 等等。
+                        fill: 'forwards' //'backwards', 'both', 'none', 'auto'
+                      });
+                    }
+                    if(index == 4){
+                        //moving the image
+                     var player = document.getElementById('section4').animate([{
+                            transform: 'scale(1)',
+                            opacity: 1,
+                            offset: 0
+                        }, {
+                            transform: 'scale(.5)',
+                            opacity: .5,
+                            offset: .3
+                        }, {
+                            transform: 'scale(.667)',
+                            opacity: .667
+                        }, {
+                            transform: 'scale(1)',
+                            opacity: .6
+                        }], {
+                            duration: 700, //毫秒
+                            easing: 'ease-in-out', //值为'linear', 或贝塞尔曲线, 等等
+                            delay: 10, //毫秒
+                            iterations: 1, //或者为数字,执行次数
+                            direction: 'alternate', //'normal', 'reverse', 等等。
+                            fill: 'forwards' //'backwards', 'both', 'none', 'auto'
+                        });
+
+                    } 
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
